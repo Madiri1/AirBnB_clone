@@ -1,10 +1,11 @@
 #!/usr/bin/python3
-
-import uuid
+from uuid import uuid4
+from datetime import datetime
 
 # Defines all common attributes/methods for other classes
 class BaseModel:
-	def __init__(self, id):
-		self.id = str(uuid.uuid4())
-
+	def __init__(self, *args, **kwargs):
+		self.id = str(uuid())
+		self.created_at = datetime.today
+		self.updated_at = datetime.today
 
